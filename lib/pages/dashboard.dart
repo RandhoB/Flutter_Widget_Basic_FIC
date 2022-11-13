@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_basic_fic/widget/bttomNavBar.dart';
+import 'package:flutter_widget_basic_fic/widget/bottomNavBar.dart';
 import 'package:flutter_widget_basic_fic/widget/container.dart';
 import 'package:flutter_widget_basic_fic/widget/containerMenu.dart';
 
@@ -12,7 +12,7 @@ class Dashboard extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(14.0),
-          child: ListView(
+          child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,82 +33,128 @@ class Dashboard extends StatelessWidget {
               const SizedBox(
                 height: 32,
               ),
-              const Text('Discover the most\nmodern furniture'),
-              const SizedBox(
-                height: 30,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  // ignore: prefer_const_literals_to_create_immutables
+              Expanded(
+                child: ListView(
                   children: [
-                    const ContainerMenu(
-                      namaMenu: 'All',
+                    const Text('Discover the most\nmodern furniture'),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          const ContainerMenu(
+                            namaMenu: 'All',
+                          ),
+                          const SizedBox(
+                            width: 17,
+                          ),
+                          const ContainerMenu(
+                            namaMenu: 'Living Room',
+                          ),
+                          const SizedBox(
+                            width: 17,
+                          ),
+                          const ContainerMenu(
+                            namaMenu: 'Bedroom',
+                          ),
+                          const SizedBox(
+                            width: 17,
+                          ),
+                          const ContainerMenu(
+                            namaMenu: 'Dining Room',
+                          ),
+                          const SizedBox(
+                            width: 17,
+                          ),
+                          const ContainerMenu(
+                            namaMenu: 'Kitchen',
+                          ),
+                          const SizedBox(
+                            width: 17,
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(
-                      width: 17,
+                      height: 30,
                     ),
-                    const ContainerMenu(
-                      namaMenu: 'Living Room',
+                    const Text('Recommended Furnitures'),
+                    const SizedBox(
+                      height: 19,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: [
+                        const ContainerProduct(
+                          gambar: 'assets/furniture1.png',
+                        ),
+                        const ContainerProduct(
+                          gambar: 'assets/furniture2.png',
+                        ),
+                      ],
                     ),
                     const SizedBox(
-                      width: 17,
+                      height: 10,
                     ),
-                    const ContainerMenu(
-                      namaMenu: 'Bedroom',
-                    ),
-                    const SizedBox(
-                      width: 17,
-                    ),
-                    const ContainerMenu(
-                      namaMenu: 'Dining Room',
-                    ),
-                    const SizedBox(
-                      width: 17,
-                    ),
-                    const ContainerMenu(
-                      namaMenu: 'Kitchen',
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: [
+                        const ContainerProduct(
+                          gambar: 'assets/furniture3.png',
+                        ),
+                        const ContainerProduct(
+                          gambar: 'assets/furniture4.png',
+                        ),
+                      ],
                     ),
                     const SizedBox(
-                      width: 17,
+                      height: 100,
                     ),
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              const Text('Recommended Furnitures'),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  const ContainerProduct(
-                    gambar: 'assets/furniture1.png',
-                  ),
-                  const ContainerProduct(
-                    gambar: 'assets/furniture2.png',
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  const ContainerProduct(
-                    gambar: 'assets/furniture3.png',
-                  ),
-                  const ContainerProduct(
-                    gambar: 'assets/furniture4.png',
-                  ),
-                ],
-              ),
-              // BottomNavBarProduct(),
             ],
           ),
         ),
       ),
+      floatingActionButton: Container(
+        height: 70,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.white,
+        // margin: const EdgeInsets.symmetric(
+        //   horizontal: 40,
+        //   vertical: 14,
+        // ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            const BottomNavBarProduct(
+              imageNavbar: 'assets/Navbar-Home.png',
+              isActive: true,
+            ),
+            const BottomNavBarProduct(
+              imageNavbar: 'assets/Navbar-Shop.png',
+              isActive: false,
+            ),
+            const BottomNavBarProduct(
+              imageNavbar: 'assets/Navbar-Star.png',
+              isActive: false,
+            ),
+            const BottomNavBarProduct(
+              imageNavbar: 'assets/Navbar-People.png',
+              isActive: false,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

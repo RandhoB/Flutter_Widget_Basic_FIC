@@ -9,13 +9,49 @@ class ContainerProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 185,
-      height: 243,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Image.asset(gambar),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+          width: 185,
+          height: 243,
+          color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                gambar,
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              const Text('Stylish Chair'),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('\$170'),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.1,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset(
+                        'assets/Icon-star.png',
+                        height: 15,
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      const Text('4.8')
+                    ],
+                  ),
+                ],
+              )
+            ],
+          )),
     );
   }
 }
