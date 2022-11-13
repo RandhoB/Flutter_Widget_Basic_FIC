@@ -22,7 +22,10 @@ class Dashboard extends StatelessWidget {
                     height: 18,
                     child: Image.asset('assets/Icon.png'),
                   ),
-                  const Text('Home'),
+                  const Text(
+                    'Home',
+                    style: TextStyle(fontSize: 16),
+                  ),
                   SizedBox(
                     width: 22,
                     height: 18,
@@ -36,7 +39,10 @@ class Dashboard extends StatelessWidget {
               Expanded(
                 child: ListView(
                   children: [
-                    const Text('Discover the most\nmodern furniture'),
+                    const Text(
+                      'Discover the most\nmodern furniture',
+                      style: TextStyle(fontSize: 22),
+                    ),
                     const SizedBox(
                       height: 30,
                     ),
@@ -48,30 +54,35 @@ class Dashboard extends StatelessWidget {
                         children: [
                           const ContainerMenu(
                             namaMenu: 'All',
+                            isChoose: true,
                           ),
                           const SizedBox(
                             width: 17,
                           ),
                           const ContainerMenu(
                             namaMenu: 'Living Room',
+                            isChoose: false,
                           ),
                           const SizedBox(
                             width: 17,
                           ),
                           const ContainerMenu(
                             namaMenu: 'Bedroom',
+                            isChoose: false,
                           ),
                           const SizedBox(
                             width: 17,
                           ),
                           const ContainerMenu(
                             namaMenu: 'Dining Room',
+                            isChoose: false,
                           ),
                           const SizedBox(
                             width: 17,
                           ),
                           const ContainerMenu(
                             namaMenu: 'Kitchen',
+                            isChoose: false,
                           ),
                           const SizedBox(
                             width: 17,
@@ -82,7 +93,10 @@ class Dashboard extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
-                    const Text('Recommended Furnitures'),
+                    const Text(
+                      'Recommended Furnitures',
+                      style: TextStyle(fontSize: 16),
+                    ),
                     const SizedBox(
                       height: 19,
                     ),
@@ -92,9 +106,15 @@ class Dashboard extends StatelessWidget {
                       children: [
                         const ContainerProduct(
                           gambar: 'assets/furniture1.png',
+                          nama: 'Stylish Chair',
+                          harga: '\$170',
+                          rating: '4.8',
                         ),
                         const ContainerProduct(
                           gambar: 'assets/furniture2.png',
+                          nama: 'Modern Table',
+                          harga: '\$75',
+                          rating: '4.9',
                         ),
                       ],
                     ),
@@ -107,9 +127,15 @@ class Dashboard extends StatelessWidget {
                       children: [
                         const ContainerProduct(
                           gambar: 'assets/furniture3.png',
+                          nama: 'Wooden Console',
+                          harga: '\$240',
+                          rating: '4.7',
                         ),
                         const ContainerProduct(
                           gambar: 'assets/furniture4.png',
+                          nama: 'Brown Armchair',
+                          harga: '\$210',
+                          rating: '4.9',
                         ),
                       ],
                     ),
