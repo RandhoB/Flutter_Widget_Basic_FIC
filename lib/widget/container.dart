@@ -1,28 +1,21 @@
 import 'package:flutter/material.dart';
 
-class ContainerProduct extends StatefulWidget {
-  const ContainerProduct({Key? key}) : super(key: key);
+class ContainerProduct extends StatelessWidget {
+  final String gambar;
+  const ContainerProduct({
+    Key? key,
+    required this.gambar,
+  }) : super(key: key);
 
-  @override
-  State<ContainerProduct> createState() => _ContainerProductState();
-}
-
-class _ContainerProductState extends State<ContainerProduct> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Dashboard"),
-        actions: const [],
+    return Container(
+      width: 185,
+      height: 243,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: [],
-          ),
-        ),
-      ),
+      child: Image.asset(gambar),
     );
   }
 }
